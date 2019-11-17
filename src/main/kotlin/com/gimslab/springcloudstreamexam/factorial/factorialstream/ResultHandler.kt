@@ -1,15 +1,17 @@
 package com.gimslab.springcloudstreamexam.factorial.factorialstream
 
-import com.gimslab.springcloudstreamexam.factorial.factorialstream.dto.FactorialResult
+import com.gimslab.springcloudstreamexam.factorial.GlobalTimer
+import com.gimslab.springcloudstreamexam.factorial.factorialstream.dto.FResult
 import org.springframework.cloud.stream.annotation.StreamListener
-import org.springframework.stereotype.Service
+import org.springframework.messaging.handler.annotation.Payload
+import org.springframework.stereotype.Component
 
-@Service
+@Component
 class ResultHandler {
 
-	@StreamListener(FactorialStreams.TOPIC_RESULT)
-	fun handleResult(result: FactorialResult) {
-		println("------------- received. $result");
-		Thread.sleep(100)
+	@StreamListener(StreamBindings.BINDING_RESULT_IN)
+	fun handleResult(@Payload result: FResult) {
+		GlobalTimer.startIfNot()
+		println("... $result elapsed=" + GlobalTimer.elapsedSec())
 	}
 }

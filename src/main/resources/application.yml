@@ -1,11 +1,17 @@
 spring.cloud.stream:
     kafka.binder.brokers: localhost:9092
     bindings:
-        factorial-seed:
+        factorial-seed-out:
+            destination: factorial.seed
+            contentType: application/json
+        factorial-seed-in:
             destination: factorial.seed
             contentType: application/json
             group: cgroup1
-        factorial-result:
+        factorial-result-out:
+            destination: factorial.result
+            contentType: application/json
+        factorial-result-in:
             destination: factorial.result
             contentType: application/json
             group: cgroup1
