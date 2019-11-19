@@ -19,4 +19,10 @@ spring.cloud.stream:
             contentType: application/json
             group: cgroup1
             binder: kafka
-management.endpoints.web.exposure.include: bindings
+management:
+    endpoints:
+        enabled-by-default: false
+        web.exposure.include: bindings
+#    endpoint.bindings.enabled: true
+spring.security.user1.username: user2
+spring.security.user1.password: pass2
