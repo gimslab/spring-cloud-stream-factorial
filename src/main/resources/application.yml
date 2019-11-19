@@ -4,14 +4,19 @@ spring.cloud.stream:
         factorial-seed-out:
             destination: factorial.seed
             contentType: application/json
+            binder: kafka
         factorial-seed-in:
             destination: factorial.seed
             contentType: application/json
             group: cgroup1
+            binder: kafka
         factorial-result-out:
             destination: factorial.result
             contentType: application/json
+            binder: kafka
         factorial-result-in:
             destination: factorial.result
             contentType: application/json
             group: cgroup1
+            binder: kafka
+management.endpoints.web.exposure.include: bindings
