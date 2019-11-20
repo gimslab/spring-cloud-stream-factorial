@@ -1,5 +1,4 @@
 spring.cloud.stream:
-    kafka.binder.brokers: localhost:9092
     bindings:
         factorial-seed-out:
             destination: factorial.seed
@@ -19,6 +18,9 @@ spring.cloud.stream:
             contentType: application/json
             group: cgroup1
             binder: kafka
+    kafka.binder:
+        brokers: localhost:9092
+#        autoCreateTopics: false
 management:
     endpoints:
         enabled-by-default: false
