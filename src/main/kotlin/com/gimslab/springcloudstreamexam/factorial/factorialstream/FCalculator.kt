@@ -16,7 +16,7 @@ object FCalculator {
 		var sum = 1
 		for (n in 1..seed) {
 			sum *= n
-			Thread.sleep(n * 100L)
+			Thread.sleep(n * 5L)
 		}
 		return sum;
 	}

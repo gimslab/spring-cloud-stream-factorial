@@ -18,6 +18,15 @@ spring.cloud.stream:
             contentType: application/json
             group: cgroup1
             binder: kafka
+        factorial-seed-to-split-in:
+            destination: factorial.seed
+            contentType: application/json
+            group: cgroup2
+            binder: kafka
+        factorial-splitted-result-out:
+            destination: factorial.splitted-result
+            contentType: application/json
+            binder: kafka
     kafka.binder:
         brokers: localhost:9092
 #        autoCreateTopics: false

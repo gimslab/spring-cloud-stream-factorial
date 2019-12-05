@@ -21,9 +21,7 @@ class SpringCloudStreamFactorialApplication(
 	}
 
 	private fun produceSeeds() {
-		println("waiting rebalancing 10 sec...")
-		Thread.sleep(10000)
-		for (i in 1..15) {
+		for (i in 1..12) {
 			streamBindings.outputSeed().send(
 					MessageBuilder.withPayload(FSeed(i)).build())
 		}
