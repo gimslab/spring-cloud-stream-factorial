@@ -1,3 +1,5 @@
+http://wiki.gimslab.com/moniwiki/wiki.php/SpringCloudStream
+
 # spring-cloud-stream-factorial
 
 ** 1~n 의 각 수의 팩토리얼 값을 모두 더한 값을 kafka stream을 통해 분산처리 하여 구한다.
